@@ -1,5 +1,5 @@
 export const devInfo = {
-    name: 'Your Name',
+    name: 'Hou YuSheng',
     links: [
         {
             name: 'GitHub',
