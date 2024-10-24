@@ -3,15 +3,15 @@ export const devInfo = {
     links: [
         {
             name: 'GitHub',
-            url: 'https://github.com/cunzaizhuyi',
+            url: 'https://github.com/YuShengHou',
         },
         {
             name: 'Twitter',
-            url: 'https://x.com/feiye_dev',
+            url: 'https://x.com/MianHou2',
         },
         {
             name: 'bilibili',
-            url: 'https://space.bilibili.com/443094046',
+            url: 'https://space.bilibili.com/233923017',
         },
     ]
 }
