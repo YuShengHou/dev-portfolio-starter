@@ -1,17 +1,17 @@
 export const devInfo = {
-    name: 'Your Name',
+    name: 'feiye',
     links: [
         {
             name: 'GitHub',
-            url: '',
+            url: 'https://github.com/cunzaizhuyi',
         },
         {
             name: 'Twitter',
-            url: '',
+            url: 'https://x.com/feiye_dev',
         },
         {
             name: 'bilibili',
-            url: '',
+            url: 'https://space.bilibili.com/443094046',
         },
     ]
 }

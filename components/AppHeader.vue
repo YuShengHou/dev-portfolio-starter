@@ -1,7 +1,7 @@
 <template>
     <header class="bg-white text-black b-b">
       <div class="container flex justify-between items-center p-6 ">
-        <div class="dev-name">{{ devInfo.name }}</div>
+        <div class="dev-name text-30px">{{ devInfo.name }}</div>
         <nav>
           <div class="flex space-x-4">
             <nuxt-link to="/">Index</nuxt-link>

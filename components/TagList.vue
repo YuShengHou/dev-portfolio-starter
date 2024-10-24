@@ -1,13 +1,11 @@
 <template>
-    <div>
-      <button
-        v-for="tag in tags"
-        :key="tag"
+    <div v-for="tag in tags" :key="tag" class="text-right">
+      <el-button
         @click="selectTag(tag)"
-        class="m-1 p-2 border rounded hover:bg-blue-500 hover:text-white"
+        class="inline-block! text-left! w-150px m-1 p-2 border rounded hover:bg-blue-500 hover:text-white"
       >
         {{ tag }}
-      </button>
+      </el-button>
     </div>
   </template>
   
