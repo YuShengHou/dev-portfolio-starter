@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-screen overflow-hidden">
-    <img ref="backgroundImage" class="background-image" src="~/assets/img/bg-.jpg" alt="背景图" />
+    <img ref="backgroundImage" class="background-image" src="~/assets/img/ocean.jpg" alt="背景图" />
     <div 
     ref="container"
     class="h-screen flex flex-col justify-center items-center">
@@ -17,17 +17,17 @@
           <IconByName :name="link.name" />
         </el-button>
       </div>
-      <nuxt-link to="/projects" class="mt-4 text-lg text-blue-500">项目列表</nuxt-link>
+      <nuxt-link to="/projects" class="mt-4 text-lg text-blue-200 hover:text-blue-500">项目列表</nuxt-link>
       <div
       v-for="(fish, index) in fishIcons"
       :key="index"
       :ref="el => fishRefs[index] = el"
       :style="{ left: fish.x + 'px', top: fish.y + 'px', position: 'absolute' }">
         <font-awesome
-        icon="fa-solid fa-fish"
+        icon="fa-solid fa-fish-fins"
         :class="[
-          index === 0 ? 'text-orange-500' : '',
-          index === 1 ? 'text-orange-200' : '',
+          index === 0 ? 'text-orange-500 text-6xl' : '',
+          index === 1 ? 'text-orange-200 text-5xl' : '',
           index === 2 ? 'text-red-500' : ''
         ]"
         class="text-4xl"/>
@@ -45,11 +45,16 @@ definePageMeta({
   layout: false
 });
 
+// 生成随机位置的函数
+const getRandom = (minX, maxX) => {
+  return Math.floor(Math.random() * (maxX - minX + 1)) + minX
+};
+
 const backgroundImage = ref(null);
 const fishIcons = ref([
-  { x: 50, y: 50, angle: 0 }, // 第一个鱼的初始位置和角度
-  { x: 600, y: 300, angle: 0 }, // 第二个鱼的初始位置和角度
-  { x: 850, y: 450, angle: 0 }, // 第三个鱼的初始位置和角度
+  { x: getRandom(50, 1000), y: getRandom(50, 700), angle: 0 }, // 第一个鱼的初始位置和角度
+  { x: getRandom(50, 1000), y: getRandom(50, 700), angle: 0 }, // 第二个鱼的初始位置和角度
+  { x: getRandom(50, 1000), y: getRandom(50, 700), angle: 0 }, // 第三个鱼的初始位置和角度
 ]);
 const fishRefs = ref([]); // 用于存储每个鱼的引用
 const container = ref(null);
@@ -112,6 +117,7 @@ onMounted(async () => {
     moveFish(index); // 开始移动每个鱼
   });
 });
+
 
 
 </script>
