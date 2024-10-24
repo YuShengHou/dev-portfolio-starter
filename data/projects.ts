@@ -1,4 +1,4 @@
-export const projects = [
+const projects = [
     {
       name: "Project One",
       description: "This is a brief description of Project One. It does many interesting things.This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. This is a brief description of Project One. ",
@@ -6,7 +6,7 @@ export const projects = [
         github: "https://github.com/user/project-one",
         website: "https://project-one.com"
       },
-      tags: ["all", "website"]
+      tags: ["Website"]
     },
     {
       name: "Project Two",
@@ -15,7 +15,7 @@ export const projects = [
         github: "https://github.com/user/project-two",
         website: "https://project-two.com"
       },
-      tags: ["all", "VScode插件"]
+      tags: ["VScode Plugin"]
     },
     {
       name: "Project Three",
@@ -24,7 +24,7 @@ export const projects = [
         github: "https://github.com/user/project-one",
         website: "https://project-one.com"
       },
-      tags: ["all", "website"]
+      tags: ["Website"]
     },
     {
       name: "Project Four",
@@ -33,7 +33,21 @@ export const projects = [
         github: "https://github.com/user/project-two",
         website: "https://project-two.com"
       },
-      tags: ["all", "VScode插件"]
+      tags: ["VScode Plugin"]
     }
   ];
   
+
+  // 自动为每个项目添加 "all" 标签的函数
+const addAllTag = (projects: any[]) => {
+  projects.forEach(project => {
+    if (!project.tags.includes("All")) {
+      project.tags.unshift("All");
+    }
+  });
+};
+
+// 调用函数
+addAllTag(projects);
+
+export { projects };

@@ -1,10 +1,12 @@
 <template>
-    <div class="flex">
-      <div class="w-1/5 p-4 border-r">
-        <TagList :tags="tags" @tag-selected="selectTag" />
+    <div class="flex container">
+      <div class="w-1/6 p-4 border-r">
+        <TagList :tags="tags"
+        :selectedTag="selectedTag"
+         @tag-selected="selectTag" />
       </div>
       <div class="flex-1 p-4">
-        <div class="grid grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 gap-4">
           <ProjectCard
             v-for="project in filteredProjects"
             :key="project.name"
@@ -20,13 +22,13 @@
   import TagList from '~/components/TagList.vue';
   import ProjectCard from '~/components/ProjectCard.vue';
   import { projects } from '~/data/projects';
+  import { tags } from '~/data/tags';
   
-  const tags = ['all', '浏览器插件', 'website', 'VScode插件', 'AI', '开源'];
-  const selectedTag = ref('all');
+  const selectedTag = ref('All');
   
   const filteredProjects = computed(() => {
     return projects.filter(project => 
-      selectedTag.value === 'all' || project.tags.includes(selectedTag.value)
+      selectedTag.value === 'All' || project.tags.includes(selectedTag.value)
     );
   });
   

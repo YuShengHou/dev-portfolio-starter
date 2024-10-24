@@ -4,7 +4,8 @@
         <div class="dev-name text-30px">{{ devInfo.name }}</div>
         <nav>
           <div class="flex space-x-4">
-            <nuxt-link to="/">Index</nuxt-link>
+            <nuxt-link to="/">Home</nuxt-link>
+            <nuxt-link to="/projects">Projects</nuxt-link>
             <nuxt-link to="/about">About</nuxt-link>
           </div>
         </nav>
